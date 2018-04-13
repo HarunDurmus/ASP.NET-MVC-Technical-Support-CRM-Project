@@ -1,0 +1,79 @@
+﻿@using TeknikDestek.WebApp
+@model TeknikDestek.Entities.Responsible
+@{
+    ViewBag.Title = "Creat";
+}
+
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            
+            <div class="form-horizontal">
+                <h1>Responsible ekle</h1>
+                <b>Bu kaydedilmiş olan son kullanıcıdır</b>
+                <b>lütfen supId'nin bir fazlasını giriniz!!</b>
+                <hr />
+                <hr />
+                @{ var res_id = Model.Id + 1;}
+                @Html.ValidationSummary(false)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.user.firstName, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.user.firstName, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.user.lastName, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.user.lastName, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.user.password, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.user.password, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.user.userName, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.user.userName, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    
+                    @Html.LabelFor(model => model.user.resId, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.user.resId, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RCompanyId, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.RCompanyId, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-8">
+                        @Bootstrap.Button("success", string.Empty, "submit", "plus", " Kaydet")
+                        @Bootstrap.LinkButton("/Responsible/Index", "default", string.Empty, string.Empty, "arrow-left", " Geri Dön!")
+                    </div>
+                </div>
+            </div>
+
+
+        }
+    </div>
+
+</div>

@@ -1,0 +1,42 @@
+﻿@using TeknikDestek.WebApp
+@model TeknikDestek.Entities.Responsible
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h4>Kategori</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.user.firstName)
+            </dt>
+            <dd>
+                @Html.DisplayNameFor(model => model.user.lastName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.user.userName)
+            </dt>
+            <dd>
+                @Html.DisplayNameFor(model => model.user.userStatus)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.user.phoneNumber)
+            </dt>
+        </dl>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                @Bootstrap.Button("danger", string.Empty, "submit", "remove", " Kaldır")
+                @Bootstrap.LinkButton("/Responsible/Index", "default", string.Empty, string.Empty, "arrow-left", " Back to List")
+            </div>
+        }
+    </div>
+</div>
+
+

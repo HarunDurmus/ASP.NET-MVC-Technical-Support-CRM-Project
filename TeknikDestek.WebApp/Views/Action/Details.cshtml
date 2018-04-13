@@ -1,0 +1,77 @@
+﻿using TeknikDestek.WebApp
+@model IEnumerable<TeknikDestek.Entities.RAction>
+
+@using TeknikDestek.WebApp
+@*@model TeknikDestek.Entities.RAction*@
+@*<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h4>aksiyonlar</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.RequestId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RequestId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.statusText)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.statusText)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.dateLogged)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.dateLogged)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.status_bit)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.status_bit)
+            </dd>
+            
+        </dl>
+        
+    </div>
+</div>*@
+
+<h2>Index</h2>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">  
+        <table class="table">
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.dateLogged)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.statusText)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.status_bit)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <th>
+                        @Html.DisplayFor(modelItem => item.dateLogged)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.statusText)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.status_bit)
+                    </th>
+                    
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+﻿@using TeknikDestek.WebApp
+@using TeknikDestek.Entities
+@using TeknikDestek.WebApp.Models
+@model IEnumerable<TeknikDestek.Entities.Request>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Business Frontpage - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+
+    <link href="http://localhost:62865/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+
+    <link href="http://localhost:62865/Content/business-frontpage.css" rel="stylesheet" />
+    <!-- jQuery -->
+
+    <script src="http://localhost:62865/Scripts/jquery-3.1.1.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="http://localhost:62865/Scripts/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Teknik Destek</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            @if (CurrentSession.User != null && CurrentSession.User.userStatus == "sp")
+            {
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>@Bootstrap.LinkMenu("/Supporter/Index", "plus", " suppoerterlar")</li>
+                    
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            @Bootstrap.LinkMenu("/Home/Logout", "log-out", " Çıkış")
+                        </li>
+
+                    </ul>
+
+                </div>}
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <p>
+                @Bootstrap.LinkButton("/Request/Create", "primary", string.Empty, string.Empty, "plus", " Yeni")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.description)
+                    </th>
+
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.date)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </th>
+                        <td>
+                            @Bootstrap.LinkButton("/Request/Assignment/" + item.Id, "warning", "btn-xs", "supporter ata", "plus", string.Empty)
+                            @Bootstrap.LinkButton("/Request/Edit/" + item.Id, "info", "btn-xs", "düzenle", "edit", string.Empty)
+                            @Bootstrap.LinkButton("/Request/Details/" + item.Id, "info", "btn-xs", "Detaylar", "search", string.Empty)
+
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

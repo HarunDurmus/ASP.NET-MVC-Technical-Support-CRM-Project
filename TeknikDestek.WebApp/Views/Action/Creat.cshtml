@@ -1,0 +1,44 @@
+﻿@model TeknikDestek.Entities.RAction
+@{
+    ViewBag.Title = "Creat";
+}
+
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(false)
+                @{var reqId = Request.QueryString["reqId"];}
+                <b>request id @reqId olrak giriniz!!!</b>
+                @*@{ var reqId2 = Int32.Parse(reqId);}*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.statusText, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.statusText, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RequestId, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        
+                        @Html.EditorFor(model =>model.RequestId, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                                
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-8">
+                        @Bootstrap.Button("success", string.Empty, "submit", "plus", " Kaydet")
+                        @Bootstrap.LinkButton("/Action/Index", "default", string.Empty, string.Empty, "arrow-left", " Geri Dön!")
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

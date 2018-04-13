@@ -1,0 +1,66 @@
+﻿@using TeknikDestek.WebApp
+@model IEnumerable<TeknikDestek.Entities.Responsible>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1></h1>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <p>
+            @Bootstrap.LinkButton("/Responsible/Create", "primary", string.Empty, string.Empty, "plus", " Yeni")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.user.firstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.user.lastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.user.phoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.user.password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.user.userName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.user.userStatus)
+                </th>
+                
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.user.firstName)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => item.user.lastName)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => item.user.phoneNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => item.user.password)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => item.user.userName)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => item.user.userStatus)
+                    </th>
+                    <td>
+                        @Bootstrap.LinkButton("/Responsible/Edit/" + item.Id, "warning", "btn-xs", "Düzenle", "edit", string.Empty)
+                        @Bootstrap.LinkButton("/Responsible/Details/" + item.Id, "info", "btn-xs", "Detaylar", "search", string.Empty)
+                        @Bootstrap.LinkButton("/Responsible/Delete/" + item.Id, "danger", "btn-xs", "Kaldır", "trash", string.Empty)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

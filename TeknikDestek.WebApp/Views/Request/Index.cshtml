@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TeknikDestek.Entities.Request>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <br />
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.description)
+                </th>
+
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.date)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.description)
+                    </th>
+                    <td>
+                        @Bootstrap.LinkButton("/Request/Edit/" + item.Id, "warning", "btn-xs", "Düzenle", "edit", string.Empty)
+                        @Bootstrap.LinkButton("/Request/Details/" + item.Id, "info", "btn-xs", "Detaylar", "search", string.Empty)
+
+                        @*@Bootstrap.LinkButton("/Action/Create/" + item.Id, "info", "btn-xs", "Oluştur", "plus", string.Empty)
+            @{ Response.Redirect("/Action/Creat?reqId=" + item.Id + "");}*@
+                        @*@Html.ActionLink("oluştur","/Action/Creat?reqId=" + item.Id + "")*@
+
+                        <a href="/Action/Creat?reqId=@item.Id">
+                            <input type="button" value="aksiyon oluştur"  />
+                        </a>
+                        
+                        @Bootstrap.LinkButton("/Action/Details/" + item.Id, "info", "btn-xs", "Detaylar", "search", string.Empty)
+
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>

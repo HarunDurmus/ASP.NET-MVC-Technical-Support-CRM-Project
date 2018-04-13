@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeknikDestek.WebApp", "TeknikDestek.WebApp\TeknikDestek.WebApp.csproj", "{BF99588D-7B03-4768-BCFE-B24F2FAB738B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeknikDestek.BusinessLayer", "TeknikDestek.BusinessLayer\TeknikDestek.BusinessLayer.csproj", "{2DA8A8D1-4E5D-44D7-9A83-C4823C241A02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeknikDestek.DataAccessLayer", "TeknikDestek.DataAccessLayer\TeknikDestek.DataAccessLayer.csproj", "{B18778CA-A5AC-4BFE-AE47-FC5CC66AB32F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeknikDestek.Entities", "TeknikDestek.Entities\TeknikDestek.Entities.csproj", "{B0C93A10-5D5F-4165-9EA0-769450212D05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeknikDestek.Core", "TeknikDestek.Core\TeknikDestek.Core.csproj", "{54DD9014-8B5C-4F25-A422-FA5B33C7412F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF99588D-7B03-4768-BCFE-B24F2FAB738B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF99588D-7B03-4768-BCFE-B24F2FAB738B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF99588D-7B03-4768-BCFE-B24F2FAB738B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF99588D-7B03-4768-BCFE-B24F2FAB738B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DA8A8D1-4E5D-44D7-9A83-C4823C241A02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DA8A8D1-4E5D-44D7-9A83-C4823C241A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DA8A8D1-4E5D-44D7-9A83-C4823C241A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DA8A8D1-4E5D-44D7-9A83-C4823C241A02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B18778CA-A5AC-4BFE-AE47-FC5CC66AB32F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B18778CA-A5AC-4BFE-AE47-FC5CC66AB32F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B18778CA-A5AC-4BFE-AE47-FC5CC66AB32F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B18778CA-A5AC-4BFE-AE47-FC5CC66AB32F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C93A10-5D5F-4165-9EA0-769450212D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C93A10-5D5F-4165-9EA0-769450212D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C93A10-5D5F-4165-9EA0-769450212D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C93A10-5D5F-4165-9EA0-769450212D05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54DD9014-8B5C-4F25-A422-FA5B33C7412F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DD9014-8B5C-4F25-A422-FA5B33C7412F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DD9014-8B5C-4F25-A422-FA5B33C7412F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DD9014-8B5C-4F25-A422-FA5B33C7412F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,48 @@
+﻿@using TeknikDestek.WebApp
+@model IEnumerable<TeknikDestek.Entities.RAction>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.statusText)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dateLogged)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.status_bit)
+                </th>
+               
+
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.RequestId)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.statusText)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.dateLogged)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.status_bit)
+                    </th>
+                    
+                </tr>
+            }
+        </table>
+    </div>
+</div>
